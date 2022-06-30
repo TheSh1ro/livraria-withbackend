@@ -2,17 +2,7 @@
 <template>
   <main id="main">
     <div class="cadastro">
-      <h1 style="font-size: 3rem; color: black">Página Home</h1>
-      <hr class="cadastro-title-hr" />
-      <h1 style="font-size: 2rem; color: black; margin-bottom: 5px">
-        Visualizar
-      </h1>
-      <div class="cadastro-options">
-        <span class="cadastro-option">Editoras</span>
-        <span class="cadastro-option">Categorias</span>
-        <span class="cadastro-option">Autores</span>
-        <span class="cadastro-option">Livros</span>
-      </div>
+      <h1 style="font-size: 3rem; color: black">Página de Cadastro</h1>
     </div>
   </main>
 </template>
@@ -26,7 +16,7 @@
   align-items: stretch;
 
   color: whitesmoke;
-  background-color: rgb(200, 20, 50);
+  background-color: rgb(200, 220, 50);
 }
 .cadastro {
   display: flex;
