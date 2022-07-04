@@ -1,19 +1,23 @@
 <template>
   <header id="header">
     <div class="header-navbar">
-      <img
-        class="navbar-logo"
-        src="https://portal.ifrn.edu.br/campus/natalzonanorte/noticias/divulgado-resultado-do-concurso-de-logomarca-da-selib/image_preview"
-        alt="Livraria"
-      />
-      <div>
-        <RouterLink to="/" class="navbar-item">Home</RouterLink>
-        <RouterLink to="/admin" class="navbar-item">Admin</RouterLink>
+      <!-- <div class="navbar-group">
+        <img
+          class="navbar-logo"
+          src="https://portal.ifrn.edu.br/campus/natalzonanorte/noticias/divulgado-resultado-do-concurso-de-logomarca-da-selib/image_preview"
+          alt="Livraria"
+        />
+      </div> -->
+      <div class="navbar-group">
+        <RouterLink to="/livros" class="navbar-item">Livros</RouterLink>
+        <RouterLink to="/categorias" class="navbar-item">Categorias</RouterLink>
+        <RouterLink to="/autores" class="navbar-item">Autores</RouterLink>
+        <RouterLink to="/editoras" class="navbar-item">Editoras</RouterLink>
       </div>
-      <div>
+      <!-- <div class="navbar-group">
         <RouterLink to="/login" class="navbar-item">Login</RouterLink>
         <RouterLink to="/cadastro" class="navbar-item">Cadastro</RouterLink>
-      </div>
+      </div> -->
     </div>
   </header>
 </template>
@@ -32,7 +36,7 @@
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .navbar-item {

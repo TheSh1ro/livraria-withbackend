@@ -25,4 +25,23 @@ a {
   display: grid;
   grid-template-rows: 10vh 100vh 10vh;
 }
+table {
+  color: white;
+  width: 80%;
+  font-size: 1.2rem;
+  border: 2px groove black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table thead {
+  background-color: black;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: rgb(50, 50, 50);
+}
+table tbody tr:nth-child(even) {
+  background-color: rgb(100, 100, 100);
+}
 </style>
