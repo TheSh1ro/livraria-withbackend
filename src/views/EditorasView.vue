@@ -1,22 +1,59 @@
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      editoras: [
+        {
+          id: 1,
+          nome: "Hyperion",
+          site: "google.com",
+        },
+      ],
+    };
+  },
+  methods: {
+    salvar() {
+      if (this.novo_nome.length > 2) {
+        this.editoras.push({
+          id: 1,
+          nome: this.novo_nome,
+          site: this.novo_site,
+        });
+        // Resetando inputs
+        this.novo_nome = "";
+        this.novo_site = "";
+      }
+    },
+  },
+};
+</script>
 <template>
   <main id="main">
     <div class="cadastro">
-      <h1 style="font-size: 3rem; color: black">Página de editoras</h1>
+      <h1 style="font-size: 3rem">Página de editoras</h1>
       <hr class="cadastro-title-hr" />
-      <h1 style="font-size: 2rem; color: black; margin-bottom: 5px">
-        Inserir os dados
-      </h1>
+      <h1 style="font-size: 2rem; margin-bottom: 5px">Inserir os dados</h1>
       <div class="cadastro-inputs">
-        <input placeholder="Nome" class="cadastro-input" type="text" />
-        <input placeholder="Site" class="cadastro-input" type="text" />
+        <input
+          v-model="novo_nome"
+          placeholder="Nome"
+          class="cadastro-input"
+          type="text"
+        />
+        <input
+          v-model="novo_site"
+          placeholder="Site"
+          class="cadastro-input"
+          type="text"
+        />
       </div>
+      <button @click="salvar" class="cadastro-button">Confirmar</button>
     </div>
     <div class="listagem">
+      <h1 style="font-size: 2rem; color: black; margin-bottom: 5px">
+        Listagem de editoras
+      </h1>
       <table>
-        <h1 style="font-size: 2rem; color: black; margin-bottom: 5px">
-          Listagem de editoras
-        </h1>
         <thead>
           <tr>
             <th>ID</th>
@@ -25,15 +62,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Drago</td>
-            <td>https://www.dragoeditorial.com/</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Atlantico</td>
-            <td>https://www.grupoeditorialatlantico.com/</td>
+          <tr v-for="editora in editoras" :key="editora.id">
+            <td>{{ editora.id }}</td>
+            <td>{{ editora.nome }}</td>
+            <td>{{ editora.site }}</td>
           </tr>
         </tbody>
       </table>
@@ -50,7 +82,7 @@
   align-items: stretch;
   gap: 3vh;
 
-  color: whitesmoke;
+  color: black;
   background-color: rgb(20, 120, 150);
 }
 .cadastro {
@@ -59,7 +91,7 @@
   align-items: center;
 }
 .cadastro-title-hr {
-  margin: 10px 0px 20px 0px;
+  margin: 5px 0px 20px 0px;
   width: 50rem;
 }
 .cadastro-inputs {
@@ -68,6 +100,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 5px;
 }
 .cadastro-input {
@@ -78,10 +111,18 @@
   border-radius: 10px;
   font-size: 1rem;
   text-align: center;
+  background-color: azure;
 }
-.cadastro-option:hover {
-  background-color: gray;
-  cursor: pointer;
+.cadastro-button {
+  margin-top: 5px;
+  font-size: 1rem;
+  padding: 1vh;
+  border: 0px;
+  border-radius: 8px;
+  background-color: azure;
+}
+.cadastro-button:active {
+  background-color: rgb(250, 250, 250, 0.8);
 }
 
 .listagem {
