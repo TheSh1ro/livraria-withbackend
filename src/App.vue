@@ -23,7 +23,7 @@ a {
   width: 100%;
 
   display: grid;
-  grid-template-rows: 10vh 100vh 10vh;
+  grid-template-rows: 10vh 1fr 10vh;
 }
 table {
   color: white;

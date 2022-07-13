@@ -32,8 +32,8 @@ export default {
     <div class="cadastro">
       <h1 style="font-size: 3rem">Página de categorias</h1>
       <hr class="cadastro-title-hr" />
-      <h1 style="font-size: 2rem; margin-bottom: 5px">Inserir os dados</h1>
       <div class="cadastro-inputs">
+        <h1 style="font-size: 2rem; margin-bottom: 5px">Inserir os dados</h1>
         <input
           v-model="novo_categoria"
           placeholder="Categoria"
@@ -46,8 +46,8 @@ export default {
           class="cadastro-input"
           type="text"
         />
-      </div>
       <button @click="salvar" class="cadastro-button">Confirmar</button>
+      </div>
     </div>
     <div class="listagem">
       <h1 style="font-size: 2rem; color: black; margin-bottom: 5px">
@@ -80,7 +80,7 @@ export default {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  gap: 3vh;
+  gap: 5vh;
 
   color: black;
   background-color: rgb(20, 120, 150);
@@ -95,17 +95,21 @@ export default {
   width: 50rem;
 }
 .cadastro-inputs {
-  width: 60vw;
+  padding: 3vh;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 5px;
+
+  background-color: rgb(175, 29, 29);
+  border-radius: 30px;
 }
 .cadastro-input {
-  flex-grow: 1;
   height: 3vh;
+  width: 15rem;
   padding: 2px;
   border: 2px solid black;
   border-radius: 10px;
@@ -119,10 +123,12 @@ export default {
   padding: 1vh;
   border: 0px;
   border-radius: 8px;
-  background-color: azure;
+  background-color: rgb(50, 50, 50);
+  color: white;
+  cursor: pointer;
 }
 .cadastro-button:active {
-  background-color: rgb(250, 250, 250, 0.8);
+  background-color: rgb(150, 150, 150);
 }
 
 .listagem {
