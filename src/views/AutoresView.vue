@@ -26,9 +26,10 @@ export default {
 </script>
 <template>
   <main id="main">
+    <div class="title-div">
+      <h1 class="title">Página de autores</h1>
+    </div>
     <div class="cadastro">
-      <h1 style="font-size: 3rem">Página de autores</h1>
-      <hr class="cadastro-title-hr" />
       <div class="cadastro-inputs">
         <h1 style="font-size: 2rem; margin-bottom: 5px">Inserir os dados</h1>
         <input
@@ -37,13 +38,11 @@ export default {
           class="cadastro-input"
           type="text"
         />
-      <button @click="salvar" class="cadastro-button">Confirmar</button>
+        <button @click="salvar" class="cadastro-button">Confirmar</button>
       </div>
     </div>
     <div class="listagem">
-      <h1 style="font-size: 2rem; color: black; margin-bottom: 5px">
-        Listagem de autores
-      </h1>
+      <h1 style="font-size: 2rem; margin-bottom: 5px">Listagem de autores</h1>
       <table>
         <thead>
           <tr>
@@ -67,21 +66,29 @@ export default {
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
   gap: 5vh;
 
   color: black;
   background-color: rgb(20, 120, 150);
 }
-.cadastro {
+.title-div {
+  grid-area: title;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  color: black;
 }
-.cadastro-title-hr {
-  margin: 5px 0px 20px 0px;
-  width: 50rem;
+.title {
+  font-size: 3rem;
+}
+.cadastro {
+  grid-area: cadastro;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .cadastro-inputs {
   padding: 3vh;
@@ -93,7 +100,9 @@ export default {
   flex-wrap: wrap;
   gap: 5px;
 
-  background-color: rgb(175, 29, 29);
+  background-color: rgb(30, 30, 30, 0.75);
+  border: 2px solid white;
+  color: white;
   border-radius: 30px;
 }
 .cadastro-input {
@@ -110,19 +119,28 @@ export default {
   margin-top: 5px;
   font-size: 1rem;
   padding: 1vh;
-  border: 0px;
+  border: 2px groove black;
   border-radius: 8px;
   background-color: rgb(50, 50, 50);
   color: white;
   cursor: pointer;
 }
 .cadastro-button:active {
-  background-color: rgb(150, 150, 150);
+  background-color: rgb(70, 70, 70);
+  border: 2px groove gray;
 }
-
 .listagem {
+  padding: 3vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  background-color: rgb(30, 30, 30, 0.75);
+  border: 2px solid white;
+  color: white;
+  border-radius: 30px;
 }
 </style>
